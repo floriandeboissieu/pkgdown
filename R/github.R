@@ -22,7 +22,7 @@ github_url_rx <- function() {
 ## output: "https://github.com/r-lib/gh"
 pkg_github_url <- function(desc) {
   urls <- desc$get_urls()
-  gh_links <- grep("^https?://git", urls, value = TRUE)
+  gh_links <- grep("^https?://git(lab|hub)", urls, value = TRUE)
 
   if (length(gh_links) == 0) {
     return()
